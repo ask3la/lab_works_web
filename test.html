@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование функций JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .test-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid tomato;
+        }
+
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .test-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .test-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .test-form input,
+        .test-form select,
+        .test-form textarea {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        .test-form input[type="number"],
+        .test-form input[type="text"] {
+            min-width: 150px;
+        }
+
+        .test-form textarea {
+            width: 100%;
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn-test {
+            background-color: tomato;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn-test:hover {
+            background-color: #ff6347;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .result.error {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+        }
+
+        .result h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .result pre {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+
+        .example {
+            background-color: #fff3e0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .example code {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тестирование JavaScript функций</h1>
+
+        <!-- Тест функции pow -->
+        <div class="test-section">
+            <h2>1. pow(x, n) - Возведение в степень</h2>
+            <p>Возвращает x в степени n (n - натуральное число)</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>pow(2, 3) = 8</code>, <code>pow(5, 2) = 25</code>
+            </div>
+            <div class="test-form">
+                <input type="number" id="pow-x" placeholder="x (основание)" value="2" step="any">
+                <input type="number" id="pow-n" placeholder="n (степень)" value="3" min="1">
+                <button class="btn-test" onclick="testPow()">Тестировать</button>
+            </div>
+            <div id="pow-result"></div>
+        </div>
+
+        <!-- Тест функции gcd -->
+        <div class="test-section">
+            <h2>2. gcd(a, b) - Наибольший общий делитель</h2>
+            <p>Возвращает НОД двух неотрицательных чисел</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>gcd(48, 18) = 6</code>, <code>gcd(17, 13) = 1</code>
+            </div>
+            <div class="test-form">
+                <input type="number" id="gcd-a" placeholder="a" value="48" min="0">
+                <input type="number" id="gcd-b" placeholder="b" value="18" min="0">
+                <button class="btn-test" onclick="testGcd()">Тестировать</button>
+            </div>
+            <div id="gcd-result"></div>
+        </div>
+
+        <!-- Тест функции minDigit -->
+        <div class="test-section">
+            <h2>3. minDigit(x) - Наименьшая цифра числа</h2>
+            <p>Возвращает наименьшую цифру целого неотрицательного числа</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>minDigit(35241) = 1</code>, <code>minDigit(98765) = 5</code>
+            </div>
+            <div class="test-form">
+                <input type="number" id="mindigit-x" placeholder="x" value="35241" min="0">
+                <button class="btn-test" onclick="testMinDigit()">Тестировать</button>
+            </div>
+            <div id="mindigit-result"></div>
+        </div>
+
+        <!-- Тест функции pluralizeRecords -->
+        <div class="test-section">
+            <h2>4. pluralizeRecords(n) - Множественное число</h2>
+            <p>Возвращает строку с правильной формой множественного числа</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>pluralizeRecords(1)</code> → "1 запись", <code>pluralizeRecords(5)</code> → "5 записей"
+            </div>
+            <div class="test-form">
+                <input type="number" id="plural-n" placeholder="n" value="5" min="0">
+                <button class="btn-test" onclick="testPluralizeRecords()">Тестировать</button>
+            </div>
+            <div id="plural-result"></div>
+        </div>
+
+        <!-- Тест функции fibb -->
+        <div class="test-section">
+            <h2>5. fibb(n) - Число Фибоначчи</h2>
+            <p>Возвращает n-ое число из последовательности Фибоначчи (n <= 1000)</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>fibb(0) = 0</code>, <code>fibb(6) = 8</code>, <code>fibb(10) = 55</code>
+            </div>
+            <div class="test-form">
+                <input type="number" id="fibb-n" placeholder="n" value="10" min="0" max="1000">
+                <button class="btn-test" onclick="testFibb()">Тестировать</button>
+            </div>
+            <div id="fibb-result"></div>
+        </div>
+
+        <!-- Тест функции getSortedArray -->
+        <div class="test-section">
+            <h2>6. getSortedArray(array, key) - Сортировка массива объектов</h2>
+            <p>Сортирует массив объектов по значению указанного ключа</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>getSortedArray([{name: "Б", age: 25}, {name: "А", age: 30}], "name")</code>
+            </div>
+            <div class="test-form">
+                <textarea id="sort-array" placeholder='Массив объектов в формате JSON, например: [{"name":"Б","age":25},{"name":"А","age":30}]'>[{"name":"Борис","age":25},{"name":"Анна","age":30},{"name":"Виктор","age":20}]</textarea>
+                <input type="text" id="sort-key" placeholder="Ключ для сортировки" value="name">
+                <button class="btn-test" onclick="testGetSortedArray()">Тестировать</button>
+            </div>
+            <div id="sort-result"></div>
+        </div>
+
+        <!-- Тест функции cesar -->
+        <div class="test-section">
+            <h2>7. cesar(str, shift, action) - Шифр Цезаря</h2>
+            <p>Шифрует или расшифровывает строку с использованием шифра Цезаря (русский алфавит)</p>
+            <div class="example">
+                <strong>Пример:</strong> <code>cesar("привет", 3, "encode")</code> → "тулзжх"
+            </div>
+            <div class="test-form">
+                <input type="text" id="cesar-str" placeholder="Строка" value="привет">
+                <input type="number" id="cesar-shift" placeholder="Сдвиг" value="3" min="0">
+                <select id="cesar-action">
+                    <option value="encode">encode (шифрование)</option>
+                    <option value="decode">decode (дешифровка)</option>
+                </select>
+                <button class="btn-test" onclick="testCesar()">Тестировать</button>
+            </div>
+            <div id="cesar-result"></div>
+        </div>
+    </div>
+
+    <!-- Подключаем все скрипты -->
+    <script src="js/pow.js"></script>
+    <script src="js/gcd.js"></script>
+    <script src="js/minDigit.js"></script>
+    <script src="js/pluralizeRecords.js"></script>
+    <script src="js/fibb.js"></script>
+    <script src="js/getSortedArray.js"></script>
+    <script src="js/cesar.js"></script>
+
+    <!-- Скрипт для тестирования -->
+    <script>
+        function showResult(elementId, result, isError = false) {
+            const resultDiv = document.getElementById(elementId);
+            resultDiv.className = 'result' + (isError ? ' error' : '');
+            resultDiv.innerHTML = '<h3>' + (isError ? 'Ошибка:' : 'Результат:') + '</h3><pre>' + 
+                (typeof result === 'object' ? JSON.stringify(result, null, 2) : String(result)) + 
+                '</pre>';
+        }
+
+        function testPow() {
+            try {
+                const x = parseFloat(document.getElementById('pow-x').value);
+                const n = parseInt(document.getElementById('pow-n').value);
+                const result = pow(x, n);
+                showResult('pow-result', `pow(${x}, ${n}) = ${result}`);
+            } catch (error) {
+                showResult('pow-result', error.message, true);
+            }
+        }
+
+        function testGcd() {
+            try {
+                const a = parseInt(document.getElementById('gcd-a').value);
+                const b = parseInt(document.getElementById('gcd-b').value);
+                const result = gcd(a, b);
+                showResult('gcd-result', `gcd(${a}, ${b}) = ${result}`);
+            } catch (error) {
+                showResult('gcd-result', error.message, true);
+            }
+        }
+
+        function testMinDigit() {
+            try {
+                const x = parseInt(document.getElementById('mindigit-x').value);
+                const result = minDigit(x);
+                showResult('mindigit-result', `minDigit(${x}) = ${result}`);
+            } catch (error) {
+                showResult('mindigit-result', error.message, true);
+            }
+        }
+
+        function testPluralizeRecords() {
+            try {
+                const n = parseInt(document.getElementById('plural-n').value);
+                const result = pluralizeRecords(n);
+                showResult('plural-result', result);
+            } catch (error) {
+                showResult('plural-result', error.message, true);
+            }
+        }
+
+        function testFibb() {
+            try {
+                const n = parseInt(document.getElementById('fibb-n').value);
+                const result = fibb(n);
+                showResult('fibb-result', `fibb(${n}) = ${result}`);
+            } catch (error) {
+                showResult('fibb-result', error.message, true);
+            }
+        }
+
+        function testGetSortedArray() {
+            try {
+                const arrayStr = document.getElementById('sort-array').value;
+                const key = document.getElementById('sort-key').value;
+                const array = JSON.parse(arrayStr);
+                const result = getSortedArray(array, key);
+                showResult('sort-result', {
+                    'Исходный массив': array,
+                    'Ключ сортировки': key,
+                    'Отсортированный массив': result
+                });
+            } catch (error) {
+                showResult('sort-result', error.message, true);
+            }
+        }
+
+        function testCesar() {
+            try {
+                const str = document.getElementById('cesar-str').value;
+                const shift = parseInt(document.getElementById('cesar-shift').value);
+                const action = document.getElementById('cesar-action').value;
+                const result = cesar(str, shift, action);
+                showResult('cesar-result', {
+                    'Исходная строка': str,
+                    'Сдвиг': shift,
+                    'Действие': action,
+                    'Результат': result
+                });
+            } catch (error) {
+                showResult('cesar-result', error.message, true);
+            }
+        }
+
+        // Автоматический запуск тестов при загрузке страницы
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('Все функции загружены. Можно тестировать!');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,179 @@
+/* Стили для формы заказа */
+
+.order-form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.order-form-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 30px 0;
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-section h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="time"],
+.form-group textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    height: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group input[type="time"] {
+    height: 40px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.radio-group label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-reset,
+.btn-submit {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset {
+    background-color: #f1eee9;
+    color: #333;
+}
+
+.btn-reset:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-submit {
+    background-color: tomato;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #ff6347;
+}
+
+/* Адаптивность формы */
+
+@media (max-width: 800px) {
+    .order-form {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-form-container {
+        padding: 20px 15px;
+    }
+    
+    .order-form-container h2 {
+        font-size: 24px;
+    }
+    
+    .form-section h3 {
+        font-size: 18px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-reset,
+    .btn-submit {
+        width: 100%;
+    }
+}
+

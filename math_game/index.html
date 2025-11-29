@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Math Game</h1>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <span class="label">Уровень:</span>
+                <span id="level-display">Начальный</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Вопрос:</span>
+                <span id="question-number">1</span> / 10
+            </div>
+            <div class="info-item">
+                <span class="label">Правильно:</span>
+                <span id="correct-count">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Неправильно:</span>
+                <span id="incorrect-count">0</span>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <div id="question" class="question">3 * 13</div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="answer-input" placeholder="Введите ваш ответ" autocomplete="off">
+            <button id="submit-btn" class="btn-submit">Отправить</button>
+        </div>
+
+        <div class="actions">
+            <button id="restart-btn" class="btn-restart" style="display: none;">Перезапустить</button>
+            <button id="exit-btn" class="btn-exit" style="display: none;">Выйти</button>
+        </div>
+
+        <div id="congratulations" class="congratulations" style="display: none;">
+            <h2>Поздравляем!</h2>
+            <p id="congratulations-text"></p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
