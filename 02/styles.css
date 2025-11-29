@@ -1,0 +1,252 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Подключение шрифта Roboto для всего текста */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка сайта */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 40px;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #000;
+}
+
+/* Навигация - Flexbox */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: tomato;
+}
+
+/* Активная ссылка */
+#active {
+    color: tomato;
+}
+
+/* Основной контент */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+/* Секции */
+section {
+    margin-bottom: 50px;
+    padding: 0;
+    background-color: transparent;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 25px 0;
+}
+
+/* Секция о компании */
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+    margin: 0 0 15px 0;
+}
+
+/* Секция преимуществ */
+.advantages-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.advantages-list li {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.advantages-list h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.advantages-list p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Секция популярных блюд */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border: 1px solid #999;
+}
+
+table th {
+    background-color: #ffffff;
+    color: #000;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border: 1px solid #999;
+}
+
+table td {
+    padding: 12px 15px;
+    border: 1px solid #999;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Футер */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 30px 40px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: tomato;
+}
+
+/* Адаптивность для главной страницы */
+
+/* Для ширины экрана ≤800px */
+@media (max-width: 800px) {
+    .about-image {
+        width: 500px;
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+}
+
+/* Для ширины экрана ≤600px */
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+}
+
+/* Для ширины экрана ≤400px */
+@media (max-width: 400px) {
+    table {
+        font-size: 12px;
+    }
+    
+    table th,
+    table td {
+        padding: 8px 10px;
+    }
+}

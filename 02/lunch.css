@@ -1,0 +1,120 @@
+/* Стили для страницы "Собрать ланч" */
+
+/* Блок с блюдами - Grid сетка */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Блок каждого блюда - Flex вертикальное выравнивание */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+}
+
+/* Изображение блюда */
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 15px;
+}
+
+/* Цена блюда */
+.dish-card .price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Название блюда */
+.dish-card .name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    flex-grow: 1;
+}
+
+/* Вес/объем блюда */
+.dish-card .weight {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Кнопка добавления */
+.dish-card .add-btn {
+    background-color: #f1eee9;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+/* Стили при наведении на карточку */
+.dish-card:hover {
+    border: 2px solid tomato;
+}
+
+.dish-card:hover .add-btn {
+    background-color: tomato;
+    color: white;
+}
+
+/* Адаптивность для страницы "Собрать ланч" */
+
+/* Для ширины экрана ≤800px */
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+}
+
+/* Для ширины экрана ≤600px */
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+    }
+    
+    section h2 {
+        text-align: center;
+    }
+}
+
+/* Футер для страницы ланч */
+footer {
+    background-color: transparent;
+    padding: 20px;
+    text-align: left;
+    color: #333;
+}
+
+footer p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
