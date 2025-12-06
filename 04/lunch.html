@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lunch-page">
+    <!-- HEADER -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="lunch.html" id="active">Собрать ланч</a>
+            <a href="orders.html">Заказы</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Секция супов -->
+        <section id="soup-section">
+            <h2>Выберите суп</h2>
+            <div class="dishes-grid" id="soup-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция главных блюд -->
+        <section id="main-section">
+            <h2>Выберите главное блюдо</h2>
+            <div class="dishes-grid" id="main-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция напитков -->
+        <section id="drink-section">
+            <h2>Выберите напиток</h2>
+            <div class="dishes-grid" id="drink-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Форма заказа -->
+    <div class="order-form-container">
+        <h2>Сделать заказ</h2>
+        <form action="https://httpbin.org/post" method="POST" class="order-form">
+            <!-- Блок "Ваш заказ" -->
+            <div class="form-section order-section">
+                <h3>Ваш заказ</h3>
+                
+                <!-- Состояние "Ничего не выбрано" -->
+                <div id="empty-order" class="empty-order">
+                    Ничего не выбрано
+                </div>
+
+                <!-- Блоки категорий (изначально скрыты) -->
+                <div id="order-categories" class="order-categories" style="display: none;">
+                    <!-- Суп -->
+                    <div class="order-category" id="order-soup" style="display: none;">
+                        <div class="category-label">Суп:</div>
+                        <div class="category-content">
+                            <span id="soup-name"></span>
+                            <span id="soup-price" class="price"></span>
+                        </div>
+                    </div>
+
+                    <!-- Основное блюдо -->
+                    <div class="order-category" id="order-main" style="display: none;">
+                        <div class="category-label">Основное блюдо:</div>
+                        <div class="category-content">
+                            <span id="main-name"></span>
+                            <span id="main-price" class="price"></span>
+                        </div>
+                    </div>
+
+                    <!-- Напиток -->
+                    <div class="order-category" id="order-drink" style="display: none;">
+                        <div class="category-label">Напиток:</div>
+                        <div class="category-content">
+                            <span id="drink-name"></span>
+                            <span id="drink-price" class="price"></span>
+                        </div>
+                    </div>
+
+                    <!-- Стоимость заказа -->
+                    <div id="order-total" class="order-total" style="display: none;">
+                        <div class="total-label">Стоимость заказа:</div>
+                        <div class="total-price" id="total-price">0₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок с данными клиента -->
+            <div class="form-section customer-section">
+                <h3>Ваши данные</h3>
+
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="reset" class="btn-reset">Сбросить</button>
+                    <button type="submit" class="btn-submit">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Позвонить нам +7-000-000-00-00</p>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="dishes.js"></script>
+    <script src="render.js"></script>
+</body>
+</html>
+

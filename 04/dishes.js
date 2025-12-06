@@ -1,137 +1,80 @@
+// Массив блюд для меню
 const dishes = [
     // Супы
     {
-        keyword: 'borsch',
-        name: 'Борщ украинский',
-        price: 350,
-        category: 'soup',
-        count: '350 мл',
-        image: 'images/soups/borsch'
-    },
-    {
         keyword: 'gazpacho',
         name: 'Гаспачо',
-        price: 280,
+        price: 195,
         category: 'soup',
-        count: '300 мл',
-        image: 'images/soups/gazpacho'
+        count: '350 г',
+        image: 'https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_1632x1000/458/67ac93bb-bf0b-4687-8f44-1eaea9a63199.jpeg'
     },
     {
-        keyword: 'minestrone',
-        name: 'Минестроне',
-        price: 320,
+        keyword: 'mushroom-soup',
+        name: 'Грибной суп-пюре',
+        price: 185,
         category: 'soup',
-        count: '350 мл',
-        image: 'images/soups/minestrone'
+        count: '330 г',
+        image: 'https://img.povar.ru/mobile/6d/75/7b/6f/gribnoi_sup-piure-773618.jpg'
     },
     {
-        keyword: 'mushroom_soup',
-        name: 'Грибной суп',
-        price: 300,
+        keyword: 'norwegian-soup',
+        name: 'Норвежский суп',
+        price: 270,
         category: 'soup',
-        count: '300 мл',
-        image: 'images/soups/mushroom_soup'
+        count: '330 г',
+        image: 'https://images.gastronom.ru/Ll3CVlAXzHqhSvL74Qx7pISA2jbv74IdvfTXaHHggiY/pr:similar-page-image/g:ce/rs:auto:0:0:0/L2dhc3Ryb25vbS9hbGwtaW1hZ2VzL2U4NWI5YjkyLWRkYmUtNDgwZS1iOTVhLWU1ZGExMjEwOWI2ZS5qcGc.webp'
     },
-
+    
     // Основные блюда
     {
-        keyword: 'salmon',
-        name: 'Лосось на гриле',
-        price: 780,
+        keyword: 'potatoes-mushrooms',
+        name: 'Жареная картошка с грибами',
+        price: 150,
         category: 'main',
         count: '250 г',
-        image: 'images/main/salmon'
+        image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/07/kartofel-e1594472951898.jpg'
     },
     {
-        keyword: 'pasta_carbonara',
-        name: 'Паста Карбонара',
-        price: 580,
+        keyword: 'lasagna',
+        name: 'Лазанья',
+        price: 385,
         category: 'main',
-        count: '300 г',
-        image: 'images/main/pasta_carbonara'
+        count: '310 г',
+        image: 'https://gotovim-doma.ru/images/recipe/1/3f/13fd3c284599a98b14685af563f95b14.jpg'
     },
     {
-        keyword: 'beef_steak',
-        name: 'Стейк из говядины',
-        price: 950,
-        category: 'main',
-        count: '300 г',
-        image: 'images/main/beef_steak'
-    },
-    {
-        keyword: 'chicken_teriyaki',
-        name: 'Курица терияки',
-        price: 650,
+        keyword: 'chicken-cutlets',
+        name: 'Котлеты из курицы с картофельным пюре',
+        price: 225,
         category: 'main',
         count: '280 г',
-        image: 'images/main/chicken_teriyaki'
+        image: 'https://resizer.mail.ru/p/caf46ed4-1253-52ec-abae-cb37001efe38/AAAFz3S1AgEWd81inno6YmCJMsdrUOsLHRRbNC6ZNTS6IyfVUnncJUScVJ4lwpRzybQetiXOrxu_RN1KezseFCPbrns.jpg'
     },
-
+    
     // Напитки
     {
-        keyword: 'coffee',
-        name: 'Кофе эспрессо',
-        price: 150,
-        category: 'drink',
-        count: '30 мл',
-        image: 'images/drinks/coffee'
-    },
-    {
-        keyword: 'juice_orange',
-        name: 'Апельсиновый фреш',
-        price: 220,
-        category: 'drink',
-        count: '250 мл',
-        image: 'images/drinks/juice_orange'
-    },
-    {
-        keyword: 'smoothie',
-        name: 'Смузи из ягод',
-        price: 280,
-        category: 'drink',
-        count: '300 мл',
-        image: 'images/drinks/smoothie'
-    },
-    {
-        keyword: 'tea',
-        name: 'Чай зелёный',
+        keyword: 'orange-juice',
+        name: 'Апельсиновый сок',
         price: 120,
         category: 'drink',
-        count: '250 мл',
-        image: 'images/drinks/tea'
-    },
-
-    // Десерты
-    {
-        keyword: 'brownie',
-        name: 'Брауни с мороженым',
-        price: 320,
-        category: 'dessert',
-        count: '150 г',
-        image: 'images/desserts/brownie'
+        count: '300 мл',
+        image: 'https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2024-06/20160507_gaf_rb34_008.jpg?itok=w2UDb-gm'
     },
     {
-        keyword: 'cheesecake',
-        name: 'Чизкейк классический',
-        price: 380,
-        category: 'dessert',
-        count: '200 г',
-        image: 'images/desserts/cheesecake'
+        keyword: 'apple-juice',
+        name: 'Яблочный сок',
+        price: 90,
+        category: 'drink',
+        count: '300 мл',
+        image: 'https://planetsushi.ru/wa-data/public/shop/products/05/09/30905/images/10119482/10119482.900x616.jpg'
     },
     {
-        keyword: 'pancakes',
-        name: 'Блины с ягодами',
-        price: 290,
-        category: 'dessert',
-        count: '250 г',
-        image: 'images/desserts/pancakes'
-    },
-    {
-        keyword: 'tiramisu',
-        name: 'Тирамису',
-        price: 350,
-        category: 'dessert',
-        count: '180 г',
-        image: 'images/desserts/tiramisu'
+        keyword: 'carrot-juice',
+        name: 'Морковный сок',
+        price: 110,
+        category: 'drink',
+        count: '300 мл',
+        image: 'https://legamed21.ru/assets/mgr/images/sliders/2018-07-20-9fnrgy7ni28.jpg'
     }
 ];
