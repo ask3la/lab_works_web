@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lunch-page">
+    <!-- HEADER -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="lunch.html" id="active">Собрать ланч</a>
+            <a href="checkout.html">Оформить заказ</a>
+            <a href="orders.html">Заказы</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Секция супов -->
+        <section id="soup-section">
+            <h2>Выберите суп</h2>
+            <!-- Фильтры для супов -->
+            <div class="filters" id="soup-filters">
+                <button class="filter-btn" data-kind="fish">рыбный</button>
+                <button class="filter-btn" data-kind="meat">мясной</button>
+                <button class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+            <div class="dishes-grid" id="soup-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция главных блюд -->
+        <section id="main-section">
+            <h2>Выберите главное блюдо</h2>
+            <!-- Фильтры для главных блюд -->
+            <div class="filters" id="main-filters">
+                <button class="filter-btn" data-kind="fish">рыбное</button>
+                <button class="filter-btn" data-kind="meat">мясное</button>
+                <button class="filter-btn" data-kind="veg">вегетарианское</button>
+            </div>
+            <div class="dishes-grid" id="main-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция салатов и стартеров -->
+        <section id="salad-section">
+            <h2>Выберите салат или стартер</h2>
+            <!-- Фильтры для салатов -->
+            <div class="filters" id="salad-filters">
+                <button class="filter-btn" data-kind="fish">рыбный</button>
+                <button class="filter-btn" data-kind="meat">мясной</button>
+                <button class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+            <div class="dishes-grid" id="salad-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция напитков -->
+        <section id="drink-section">
+            <h2>Выберите напиток</h2>
+            <!-- Фильтры для напитков -->
+            <div class="filters" id="drink-filters">
+                <button class="filter-btn" data-kind="cold">холодный</button>
+                <button class="filter-btn" data-kind="hot">горячий</button>
+            </div>
+            <div class="dishes-grid" id="drink-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Секция десертов -->
+        <section id="dessert-section">
+            <h2>Выберите десерт</h2>
+            <!-- Фильтры для десертов -->
+            <div class="filters" id="dessert-filters">
+                <button class="filter-btn" data-kind="small">маленькая порция</button>
+                <button class="filter-btn" data-kind="medium">средняя порция</button>
+                <button class="filter-btn" data-kind="large">большая порция</button>
+            </div>
+            <div class="dishes-grid" id="dessert-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Блок с доступными вариантами ланча -->
+        <section class="lunch-variants-section">
+            <h2>Доступные варианты ланча</h2>
+            <div class="lunch-variants-grid">
+                <!-- Вариант 1: Суп + Главное блюдо + Салат + Напиток -->
+                <div class="lunch-variant" data-variant="1" data-categories="soup,main,salad,drink">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2388/2388080.png" alt="Суп" class="variant-dish-img">
+                        <span class="variant-dish-label">Суп</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7443/7443749.png" alt="Главное блюдо" class="variant-dish-img">
+                        <span class="variant-dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1057/1057510.png" alt="Салат" class="variant-dish-img">
+                        <span class="variant-dish-label">Салат</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Вариант 2: Суп + Главное блюдо + Напиток -->
+                <div class="lunch-variant" data-variant="2" data-categories="soup,main,drink">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2388/2388080.png" alt="Суп" class="variant-dish-img">
+                        <span class="variant-dish-label">Суп</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7443/7443749.png" alt="Главное блюдо" class="variant-dish-img">
+                        <span class="variant-dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Вариант 3: Суп + Салат + Напиток -->
+                <div class="lunch-variant" data-variant="3" data-categories="soup,salad,drink">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2388/2388080.png" alt="Суп" class="variant-dish-img">
+                        <span class="variant-dish-label">Суп</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1057/1057510.png" alt="Салат" class="variant-dish-img">
+                        <span class="variant-dish-label">Салат</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Вариант 4: Главное блюдо + Салат + Напиток -->
+                <div class="lunch-variant" data-variant="4" data-categories="main,salad,drink">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7443/7443749.png" alt="Главное блюдо" class="variant-dish-img">
+                        <span class="variant-dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1057/1057510.png" alt="Салат" class="variant-dish-img">
+                        <span class="variant-dish-label">Салат</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Вариант 5: Главное блюдо + Напиток -->
+                <div class="lunch-variant" data-variant="5" data-categories="main,drink">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7443/7443749.png" alt="Главное блюдо" class="variant-dish-img">
+                        <span class="variant-dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок с информацией о десертах -->
+            <div class="dessert-info">
+                <div class="dessert-info-dish">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081985.png" alt="Десерт" class="variant-dish-img">
+                    <span class="variant-dish-label">Десерт</span>
+                    <span class="dessert-info-text">Десерты можно добавлять в любой вид ланча</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lunch-variants-section">
+            <h2>Готовые варианты ланча</h2>
+            <div class="lunch-variants-grid">
+                <!-- Вариант 1: Лазанья + Салат с тунцом + Апельсиновый сок -->
+                <div class="lunch-variant ready-variant" data-dishes="lazanya,tunasalad,apelsinoviy" data-price="750">
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7443/7443749.png" alt="Главное блюдо" class="variant-dish-img">
+                        <span class="variant-dish-label">Главное блюдо - Лазанья</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1057/1057510.png" alt="Салат" class="variant-dish-img">
+                        <span class="variant-dish-label">Салат - Салат с тунцом</span>
+                    </div>
+                    <div class="variant-dish">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1552/1552621.png" alt="Напиток" class="variant-dish-img">
+                        <span class="variant-dish-label">Напиток - Апельсиновый сок</span>
+                    </div>
+                    <br>
+                    <div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/791/791968.png" alt="Скидка" class="variant-dish-img">
+                        <span class="variant-dish-label">Общая стоимость: 750₽</span>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Панель перехода к оформлению -->
+    <div id="checkout-panel" class="checkout-panel hidden">
+        <div class="checkout-panel-content">
+            <div class="checkout-panel-total">
+                Стоимость заказа: <span class="total-price">0₽</span>
+            </div>
+            <a href="checkout.html" class="checkout-link disabled" disabled>Перейти к оформлению</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Позвонить нам +7-000-000-00-00</p>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="storage.js"></script>
+    <script src="dishes.js"></script>
+    <script src="render.js"></script>
+</body>
+</html>
+

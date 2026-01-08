@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Доставка Бизнес-Ланчей</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6347;
+            --secondary-color: #2c3e50;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            min-height: 500px;
+        }
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            padding: 20px 0;
+        }
+        .contact-info-item {
+            margin-bottom: 25px;
+        }
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ff4500;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 99, 71, 0.4);
+        }
+        .navbar-custom {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="landing.html">Food Construct</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="landing.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lunch.html">Собрать ланч</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkout.html">Оформить заказ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">Заказы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Food Construct</h1>
+                    <p class="lead mb-4">
+                        Инновационный сервис доставки бизнес-ланчей в Москве. 
+                        Свежие блюда, приготовленные профессиональными поварами, 
+                        доставка прямо в офис в удобное для вас время.
+                    </p>
+                    <p class="mb-4">
+                        Мы создали уникальную платформу, которая позволяет занятым профессионалам 
+                        экономить время на поиск обеда и фокусироваться на важных делах. 
+                        Каждый ланч составляется из свежих, качественных ингредиентов, 
+                        отобранных нашими шефами.
+                    </p>
+                    <a href="lunch.html" class="btn btn-light btn-lg btn-custom">
+                        Собрать ланч <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyC7oMhI-ziO6KeiwtCTYXE7MddWW-teDMhA&s" 
+                         alt="Бизнес-ланч" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Почему выбирают нас</h2>
+                    <p class="lead text-muted">Мы предлагаем лучший сервис доставки бизнес-ланчей</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-lightning-charge feature-icon"></i>
+                            <h4 class="card-title fw-bold">Быстрая доставка</h4>
+                            <p class="card-text text-muted">
+                                Доставим ваш заказ в течение 30-60 минут в пределах МКАД. 
+                                Мы ценим ваше время и гарантируем оперативность.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-shop feature-icon"></i>
+                            <h4 class="card-title fw-bold">Свежие продукты</h4>
+                            <p class="card-text text-muted">
+                                Готовим каждый день из качественных ингредиентов. 
+                                Все блюда готовятся в день доставки для максимальной свежести.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-people feature-icon"></i>
+                            <h4 class="card-title fw-bold">Опытные повара</h4>
+                            <p class="card-text text-muted">
+                                Команда профессионалов с опытом работы 10+ лет. 
+                                Каждое блюдо готовится с любовью и вниманием к деталям.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-currency-exchange feature-icon"></i>
+                            <h4 class="card-title fw-bold">Выгодные цены</h4>
+                            <p class="card-text text-muted">
+                                От 280 рублей за сытный ланч на одного человека. 
+                                Качественная еда по доступным ценам.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-heart feature-icon"></i>
+                            <h4 class="card-title fw-bold">Сбалансированное меню</h4>
+                            <p class="card-text text-muted">
+                                Разнообразное меню с учетом всех предпочтений. 
+                                Вегетарианские, мясные и рыбные блюда на любой вкус.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-building feature-icon"></i>
+                            <h4 class="card-title fw-bold">Корпоративные предложения</h4>
+                            <p class="card-text text-muted">
+                                Специальные условия для компаний. 
+                                Организуем регулярную доставку обедов для вашего офиса.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4">Готовы попробовать?</h2>
+                    <p class="lead mb-4">
+                        Соберите свой идеальный ланч из свежих блюд, приготовленных нашими поварами. 
+                        Выберите суп, основное блюдо, салат, напиток и десерт по своему вкусу.
+                    </p>
+                    <a href="lunch.html" class="btn btn-light btn-lg btn-custom">
+                        Собрать ланч <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Свяжитесь с нами</h2>
+                    <p class="lead text-muted">Мы всегда рады ответить на ваши вопросы</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Отправить сообщение</h3>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="contact-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contact-email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Сообщение</label>
+                                <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">
+                                Отправить <i class="bi bi-send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Контакты</h3>
+                        <div class="contact-info-item d-flex align-items-start">
+                            <i class="bi bi-telephone"></i>
+                            <div>
+                                <h5>Телефон</h5>
+                                <p class="mb-0"><a href="tel:+70000000000" class="text-decoration-none">+7-000-000-00-00</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item d-flex align-items-start">
+                            <i class="bi bi-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p class="mb-0"><a href="mailto:info@foodconstruct.ru" class="text-decoration-none">info@foodconstruct.ru</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item d-flex align-items-start">
+                            <i class="bi bi-geo-alt"></i>
+                            <div>
+                                <h5>Адрес</h5>
+                                <p class="mb-0">г. Москва, ул. Примерная, д. 1</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item d-flex align-items-start">
+                            <i class="bi bi-clock"></i>
+                            <div>
+                                <h5>Режим работы</h5>
+                                <p class="mb-0">Пн-Пт: 7:00 - 23:00<br>Сб-Вс: 9:00 - 21:00</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <h5 class="mb-3">Мы в соцсетях</h5>
+                            <a href="#" title="VKontakte"><i class="bi bi-vk"></i></a>
+                            <a href="#" title="Telegram"><i class="bi bi-telegram"></i></a>
+                            <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2024 Food Construct. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Обработка формы обратной связи
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            
+            // Здесь можно добавить отправку данных на сервер
+            alert('Спасибо за ваше сообщение, ' + name + '! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ - Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="landing.html">Главная</a>
+            <a href="lunch.html">Собрать ланч</a>
+            <a href="checkout.html" id="active">Оформить заказ</a>
+            <a href="orders.html">Заказы</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="checkout-page">
+        <!-- Раздел "Состав заказа" -->
+        <section class="checkout-section">
+            <h2>Состав заказа</h2>
+            <div id="order-composition" class="dishes-grid">
+                <!-- Карточки блюд будут добавлены через JavaScript -->
+            </div>
+            <div id="empty-cart" class="empty-cart" style="display: none;">
+                Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a href="lunch.html">Собрать ланч</a>.
+            </div>
+        </section>
+
+        <!-- Раздел "Оформление заказа" -->
+        <section class="checkout-section">
+            <h2>Оформление заказа</h2>
+            <form id="checkout-form" class="order-form">
+                <!-- Блок "Ваш заказ" -->
+                <div class="form-section order-section">
+                    <h3>Ваш заказ</h3>
+                    
+                    <!-- Блоки категорий -->
+                    <div id="order-categories" class="order-categories">
+                        <!-- Суп -->
+                        <div class="order-category" id="order-soup">
+                            <div class="category-label">Суп:</div>
+                            <div class="category-content">
+                                <span id="soup-name">Не выбран</span>
+                                <span id="soup-price" class="price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Основное блюдо -->
+                        <div class="order-category" id="order-main">
+                            <div class="category-label">Основное блюдо:</div>
+                            <div class="category-content">
+                                <span id="main-name">Не выбрано</span>
+                                <span id="main-price" class="price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Салат -->
+                        <div class="order-category" id="order-salad">
+                            <div class="category-label">Салат или стартер:</div>
+                            <div class="category-content">
+                                <span id="salad-name">Не выбран</span>
+                                <span id="salad-price" class="price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Напиток -->
+                        <div class="order-category" id="order-drink">
+                            <div class="category-label">Напиток:</div>
+                            <div class="category-content">
+                                <span id="drink-name">Не выбран</span>
+                                <span id="drink-price" class="price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Десерт -->
+                        <div class="order-category" id="order-dessert">
+                            <div class="category-label">Десерт:</div>
+                            <div class="category-content">
+                                <span id="dessert-name">Не выбран</span>
+                                <span id="dessert-price" class="price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Стоимость заказа -->
+                        <div id="order-total" class="order-total">
+                            <div class="total-label">Стоимость заказа:</div>
+                            <div class="total-price" id="total-price">0₽</div>
+                        </div>
+                    </div>
+
+                    <!-- Комментарии к заказу -->
+                    <div class="form-group">
+                        <label for="comment">Комментарии к заказу</label>
+                        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                    </div>
+                </div>
+
+                <!-- Блок с данными клиента -->
+                <div class="form-section customer-section">
+                    <h3>Ваши данные</h3>
+
+                    <div class="form-group">
+                        <label for="full_name">Имя</label>
+                        <input type="text" id="full_name" name="full_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery_address">Адрес доставки</label>
+                        <input type="text" id="delivery_address" name="delivery_address" required>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="subscribe" name="subscribe" value="1">
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Время доставки</label>
+                        <div class="radio-group">
+                            <input type="radio" id="delivery-time-now" name="delivery_type" value="now" required checked>
+                            <label for="delivery-time-now">Как можно скорее</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="delivery-time-later" name="delivery_type" value="by_time">
+                            <label for="delivery-time-later">К указанному времени</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="delivery-time-group" style="display: none;">
+                        <label for="delivery_time">Время доставки</label>
+                        <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300">
+                        <small>Доступное время доставки: 7:00 до 23:00</small>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Позвонить нам +7-000-000-00-00</p>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="storage.js"></script>
+    <script src="dishes.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
+
